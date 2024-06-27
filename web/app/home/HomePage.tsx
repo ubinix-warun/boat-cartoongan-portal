@@ -31,7 +31,7 @@ export default function HomePage() {
           </ul>
         </div>
       </main>
-      <Footer />
+      <Footer/>
     </>
   );
 }

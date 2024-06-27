@@ -48,7 +48,8 @@ function FormBuyCoffee({ refetchMemos }: FormBuyCoffeeProps) {
       gasFee: parseEther(String(GAS_COST * fields.coffeeCount)),
       contract,
       name: 'buyCoffee',
-      arguments: [fields.coffeeCount, fields.name, fields.twitterHandle, fields.message],
+      arguments: [fields.coffeeCount, fields.message],
+      // arguments: [fields.coffeeCount, fields.name, fields.twitterHandle, fields.message],
       enableSubmit: fields.name !== '' && fields.message !== '',
       reset,
     });

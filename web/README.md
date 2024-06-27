@@ -61,7 +61,10 @@ The output json contains additional information. We only need the `abi` property
 ```bash
 # from the "contract" folder
 
-jq .abi out/BuyMeACoffee/BuyMeACoffee.json
+jq .abi out/BuyMeACoffee.sol/BuyMeACoffee.json
+
+jq -r '"const abi = \(.abi) as const;\r\nexport default abi;"' out/BuyMeACoffee.sol/BuyMeACoffee.json > ../web/app/buy-me-coffee/_contracts/BuyMeACoffeeABI.ts
+
 ```
 
 Take the output of `jq` and update `web/app/buy-me-coffee/_contracts/BuyMeACoffeeABI.ts`
@@ -77,7 +80,7 @@ To deploy your smart contract,
 ```bash
 # from the "contract" folder
 
-source .env && forge script script/LocalContract.s.sol:LocalContractScript  --broadcast --rpc-url https://sepolia.base.org
+source .env && forge script script/LocalContract.s.sol:LocalContractScript  --broadcast --rpc-url base_sepolia
 ```
 
 In the long output, find the value for `Contract Address`.

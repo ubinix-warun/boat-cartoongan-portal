@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Abi, TransactionExecutionError } from 'viem';
-import { useSimulateContract, useWaitForTransactionReceipt, useWriteContract } from 'wagmi';
+import {useSimulateContract, useWaitForTransactionReceipt, useWriteContract} from 'wagmi';
 import { UseContractReturn } from '@/hooks/contracts';
 import { useLoggedInUserCanAfford } from '@/hooks/useUserCanAfford';
 
@@ -31,7 +31,7 @@ export default function useSmartContractForms({
 
   const canAfford = useLoggedInUserCanAfford(gasFee);
 
-  const { data: contractRequest } = useSimulateContract({
+  const params = {
     address: contract.status === 'ready' ? contract.address : undefined,
     abi: contract.abi,
     functionName: functionName,
@@ -40,7 +40,12 @@ export default function useSmartContractForms({
       enabled: isValid && contract.status === 'ready',
     },
     value: gasFee,
-  });
+  }
+
+  const { data: contractRequest, error: e } = useSimulateContract(params);
+
+  console.log(contractRequest)
+  console.log(e)
 
   const {
     writeContract,
@@ -70,6 +75,7 @@ export default function useSmartContractForms({
       } else {
         setTransactionState(null);
       }
+
     },
     [contractRequest, writeContract],
   );

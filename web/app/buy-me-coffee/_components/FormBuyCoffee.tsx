@@ -6,7 +6,7 @@ import { useBuyMeACoffeeContract } from '../_contracts/useBuyMeACoffeeContract';
 import useFields from '../_hooks/useFields';
 import useOnchainCoffeeMemos from '../_hooks/useOnchainCoffeeMemos';
 import ContractAlert from './ContractAlert';
-import InputText from './InputText';
+// import InputText from './InputText';
 import Label from './Label';
 import TextArea from './TextArea';
 import TransactionSteps from './TransactionSteps';
@@ -48,9 +48,8 @@ function FormBuyCoffee({ refetchMemos }: FormBuyCoffeeProps) {
       gasFee: parseEther(String(GAS_COST * fields.coffeeCount)),
       contract,
       name: 'buyCoffee',
-      arguments: [fields.coffeeCount, fields.message],
-      // arguments: [fields.coffeeCount, fields.name, fields.twitterHandle, fields.message],
-      enableSubmit: fields.name !== '' && fields.message !== '',
+      arguments: [fields.coffeeCount, fields.message], // arguments: [fields.coffeeCount, fields.name, fields.twitterHandle, fields.message],
+      enableSubmit: fields.message !== '', //  enableSubmit: fields.name !== '' && fields.message !== '',
       reset,
     });
 
@@ -96,30 +95,30 @@ function FormBuyCoffee({ refetchMemos }: FormBuyCoffeeProps) {
         </div>
 
         <div>
-          <div className="mb-5">
-            <Label htmlFor="name">Name</Label>
-            <InputText
-              id="name"
-              placeholder="Name"
-              // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
-              onChange={(evt) => setField('name', evt.target.value)}
-              disabled={disabled}
-              required
-            />
-          </div>
+          {/*<div className="mb-5">*/}
+          {/*  <Label htmlFor="name">Name</Label>*/}
+          {/*  <InputText*/}
+          {/*    id="name"*/}
+          {/*    placeholder="Name"*/}
+          {/*    // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop*/}
+          {/*    onChange={(evt) => setField('name', evt.target.value)}*/}
+          {/*    disabled={disabled}*/}
+          {/*    required*/}
+          {/*  />*/}
+          {/*</div>*/}
 
-          <div className="mb-5">
-            <Label htmlFor="twitterHandle">Twitter handle (Optional)</Label>
-            <InputText
-              id="twitterHandle"
-              placeholder="@"
-              // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop
-              onChange={(evt) => {
-                setField('twitterHandle', evt.target.value);
-              }}
-              disabled={disabled}
-            />
-          </div>
+          {/*<div className="mb-5">*/}
+          {/*  <Label htmlFor="twitterHandle">Twitter handle (Optional)</Label>*/}
+          {/*  <InputText*/}
+          {/*    id="twitterHandle"*/}
+          {/*    placeholder="@"*/}
+          {/*    // eslint-disable-next-line react-perf/jsx-no-new-function-as-prop*/}
+          {/*    onChange={(evt) => {*/}
+          {/*      setField('twitterHandle', evt.target.value);*/}
+          {/*    }}*/}
+          {/*    disabled={disabled}*/}
+          {/*  />*/}
+          {/*</div>*/}
 
           <div className="mb-5">
             <Label htmlFor="message">Message</Label>

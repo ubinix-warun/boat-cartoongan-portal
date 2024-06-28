@@ -1,10 +1,16 @@
-import { isValidAAEntrypoint, isWalletASmartWallet } from '@coinbase/onchainkit/wallet';
+import {
+  isValidAAEntrypoint,
+  // isWalletASmartWallet
+} from '@coinbase/onchainkit/wallet';
 import { NextRequest, NextResponse } from 'next/server';
 import { UserOperation } from 'permissionless';
-import { client, paymasterClient } from '@/utils/paymasterClient';
+import {
+  // client,
+  paymasterClient
+} from '@/utils/paymasterClient';
 import type {
   IsValidAAEntrypointOptions,
-  IsWalletASmartWalletOptions,
+  // IsWalletASmartWalletOptions,
 } from '@coinbase/onchainkit/wallet';
 
 type PaymasterRequest = {
@@ -29,14 +35,14 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   }
 
   // Validate the User Operation by checking if the sender address is a proxy with the expected bytecode.
-  if (
-    !(await isWalletASmartWallet({
-      client,
-      userOp,
-    } as IsWalletASmartWalletOptions))
-  ) {
-    return NextResponse.json({ error: 'invalid wallet' }, { status: 400 });
-  }
+  // if (
+  //   !(await isWalletASmartWallet({
+  //     client,
+  //     userOp,
+  //   } as IsWalletASmartWalletOptions))
+  // ) {
+  //   return NextResponse.json({ error: 'invalid wallet' }, { status: 400 });
+  // }
 
   try {
     let result;

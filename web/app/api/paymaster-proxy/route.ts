@@ -44,24 +44,24 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   //   return NextResponse.json({ error: 'invalid wallet' }, { status: 400 });
   // }
 
-  try {
-    let result;
-    // Initial checks and preliminary validation.
-    if (method === 'pm_getPaymasterStubData') {
-      result = await paymasterClient.getPaymasterStubData({
-        userOperation: userOp,
-      });
-      // Full validation and actual sponsorship data.
-    } else if (method === 'pm_getPaymasterData') {
-      result = await paymasterClient.getPaymasterData({
-        userOperation: userOp,
-      });
-    } else {
-      return NextResponse.json({ error: 'Method not found' }, { status: 404 });
-    }
-    return NextResponse.json({ result }, { status: 200 });
-  } catch (error) {
-    console.error('Error:', error);
+  // try {
+  //   let result;
+  //   // Initial checks and preliminary validation.
+  //   if (method === 'pm_getPaymasterStubData') {
+  //     result = await paymasterClient.getPaymasterStubData({
+  //       userOperation: userOp,
+  //     });
+  //     // Full validation and actual sponsorship data.
+  //   } else if (method === 'pm_getPaymasterData') {
+  //     result = await paymasterClient.getPaymasterData({
+  //       userOperation: userOp,
+  //     });
+  //   } else {
+  //     return NextResponse.json({ error: 'Method not found' }, { status: 404 });
+  //   }
+  //   return NextResponse.json({ result }, { status: 200 });
+  // } catch (error) {
+  //   console.error('Error:', error);
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
-  }
+  // }
 }

@@ -3,7 +3,7 @@ import { generateMetadata } from '@/utils/generateMetadata';
 export const metadata = generateMetadata({
   title: 'Support "CartoonGAN" creator, Buy me a coffee!',
   description:
-    'Save weeks of initial app setup and the hassle of integrating onchain components with web2 infrastructure.',
+    'decentralized platform that empowers AI model creators to monetize their work and allows supporters to directly fund the development of cutting-edge AI technologies.',
   images: 'themes.png',
   pathname: 'buy-me-coffee',
 });

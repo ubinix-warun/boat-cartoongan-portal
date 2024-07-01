@@ -20,9 +20,9 @@ export default function Footer() {
                 passHref
                 className="font-robotoMono text-center text-xl font-medium text-white no-underline"
               >
-                BUILD ONCHAIN APPS
+                BOAT CartoonGAN Portal
               </NextLink>
-              <NavbarLink href="https://github.com/coinbase/build-onchain-apps" target="_blank">
+              <NavbarLink href="https://github.com/ubinix-warun/boat-cartoongan-portal" target="_blank">
                 <GitHubLogoIcon
                   width="24"
                   height="24"
@@ -46,24 +46,24 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="font-robotoMono flex flex-col items-start justify-center gap-4 text-center text-xl font-medium text-white">
-            EXPERIENCES
-            <NavbarLink href="/buy-me-coffee">
-              <span className="flex items-center gap-1 px-2">
-                Buy Me Coffee <ArrowTopRightIcon width="16" height="16" />
-              </span>
-            </NavbarLink>
-            <NavbarLink href="/mint">
-              <span className="flex items-center gap-1 px-2">
-                Mint NFT <ArrowTopRightIcon width="16" height="16" />
-              </span>
-            </NavbarLink>
-            <NavbarLink href="/paymaster-bundler">
-              <span className="flex items-center gap-1 px-2">
-                Paymaster Bundler <ArrowTopRightIcon width="16" height="16" />
-              </span>
-            </NavbarLink>
-          </div>
+          {/*<div className="font-robotoMono flex flex-col items-start justify-center gap-4 text-center text-xl font-medium text-white">*/}
+          {/*  EXPERIENCES*/}
+          {/*  <NavbarLink href="/buy-me-coffee">*/}
+          {/*    <span className="flex items-center gap-1 px-2">*/}
+          {/*      Buy Me Coffee <ArrowTopRightIcon width="16" height="16" />*/}
+          {/*    </span>*/}
+          {/*  </NavbarLink>*/}
+          {/*  <NavbarLink href="/mint">*/}
+          {/*    <span className="flex items-center gap-1 px-2">*/}
+          {/*      Mint NFT <ArrowTopRightIcon width="16" height="16" />*/}
+          {/*    </span>*/}
+          {/*  </NavbarLink>*/}
+          {/*  <NavbarLink href="/paymaster-bundler">*/}
+          {/*    <span className="flex items-center gap-1 px-2">*/}
+          {/*      Paymaster Bundler <ArrowTopRightIcon width="16" height="16" />*/}
+          {/*    </span>*/}
+          {/*  </NavbarLink>*/}
+          {/*</div>*/}
         </div>
       </div>
     </footer>

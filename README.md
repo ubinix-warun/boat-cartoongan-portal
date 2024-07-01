@@ -2,7 +2,7 @@
 
 boat-cartoongan-portal is a decentralized platform that empowers AI model creators to monetize their work and allows supporters to directly fund the development of cutting-edge AI technologies.
 
-<img src="" width="90%"/>
+<img src="https://raw.githubusercontent.com/ubinix-warun/boat-cartoongan-portal/main/assets/ss1.png" width="90%"/>
 
 This project has two main folders:
 

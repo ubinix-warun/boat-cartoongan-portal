@@ -4,10 +4,10 @@ import {
 } from '@coinbase/onchainkit/wallet';
 import { NextRequest, NextResponse } from 'next/server';
 import { UserOperation } from 'permissionless';
-import {
-  // client,
-  paymasterClient
-} from '@/utils/paymasterClient';
+// import {
+//   // client,
+//   // paymasterClient
+// } from '@/utils/paymasterClient';
 import type {
   IsValidAAEntrypointOptions,
   // IsWalletASmartWalletOptions,
@@ -28,6 +28,8 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   const reqBody: PaymasterRequest = (await req.json()) as PaymasterRequest;
   const { method, params } = reqBody;
   const [userOp, entrypoint] = params;
+
+  console.log(method,userOp);
 
   // Verify the entrypoint address
   if (!isValidAAEntrypoint({ entrypoint } as IsValidAAEntrypointOptions)) {

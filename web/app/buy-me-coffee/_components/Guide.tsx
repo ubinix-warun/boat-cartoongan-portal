@@ -114,7 +114,7 @@ export default function Guide() {
             <H4>Contract Summary</H4>
             <P>
               The <code>BuyMeACoffee.sol</code> smart contract in this project enables Ethereum (ETH) donations in a
-              user-friendly manner within the tflite application's User Interface (UI). Here's an overview of its
+              user-friendly manner within the tflite application&apos;s User Interface (UI). Here&apos;s an overview of its
               functionalities:
             </P>
             <ul>
